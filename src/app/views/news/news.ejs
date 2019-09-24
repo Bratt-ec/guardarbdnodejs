@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Node JS | CRUD</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand mx-auto">NEWS</a>
+    </nav>
+    <!-- datos de MYSQL -->
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-4 text-center">
+            <table class="table table-striped">
+                <tr>  
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Noticia</th>
+                </tr>
+                <% for(var i=0; i < news.length; i++) {%>                
+                <tr>
+                    <td> <%= news[i].id %></td>
+                    <td> <%= news[i].titulo %></td>
+                    <td> <%= news[i].noticia %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+        <div class="col-md-6 mt-4 text-center">
+    <form action="/news" method="POST">
+        <h3 class="card-title">Agrege una Noticia</h3>
+        <div class="form-group">
+            <input type="text" name="titulo" class="form-control" placeholder="Ingrese un título">
+        </div>
+        <div class="form-group">
+            <input type="text" name="noticia" placeholder="Ingrese una noticia" class="form-control">
+        </div>
+        <input type="submit" class="btn-primary">
+    </form>
+
+        </div>
+    </div>  
+</div>            
+</body>
+</html>
